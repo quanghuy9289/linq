@@ -29,7 +29,7 @@ namespace Linq.AggregateFunctions
             var res = students.Aggregate<Student, string, string>(
                 "Student names: ", // seed value
                 (str, s) => str += s.StudentName + ", ",
-                str => str = str.Substring(0, str.Length - 2));
+                str => str = str.Substring(0, str.Length - 2)); // result selector
 
             return res;
         }
@@ -41,6 +41,12 @@ namespace Linq.AggregateFunctions
                 (age, s) => age += s.Age);
 
             return res;
+        }
+
+        public static bool IsStudentExist(IList<Student> students, Student st)
+        {
+            if (students.Contains(st, new StudentComparer())) return true;
+            return false;
         }
     }
 }
