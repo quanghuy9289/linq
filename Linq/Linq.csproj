@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2_CollectionOperators.cs" />
+    <Compile Include="5_ConvertOperators.cs" />
     <Compile Include="4_GenerateDataOperators.cs" />
     <Compile Include="3_PartitionOperators.cs" />
     <Compile Include="1_AggregateFunctions.cs" />

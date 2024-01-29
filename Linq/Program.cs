@@ -50,10 +50,17 @@ namespace Linq
             //CollectionOperators.PrintStudentList(PartitionOperators.TakeWhileMethod_2(studentList));
 
             // -------------- toan tu phan vung --------------
-            GenerateDataOperators.PrintList(GenerateDataOperators.RangeMethod(numberOfElement: 5));
-            GenerateDataOperators.PrintList(GenerateDataOperators.RepeatMethod(numberOfElement: 5));
-            GenerateDataOperators.EmptyMethod();
+            //GenerateDataOperators.PrintList(GenerateDataOperators.RangeMethod(numberOfElement: 5));
+            //GenerateDataOperators.PrintList(GenerateDataOperators.RepeatMethod(numberOfElement: 5));
+            //GenerateDataOperators.EmptyMethod();
 
+            // -------------- toan tu phan vung --------------
+            //ConvertOperators.AsEnumerableMethod(studentList);
+            //ConvertOperators.AsQueryableMethod(studentList);
+            //ConvertOperators.ToArrayMethod(new List<string>() { "One", "Two", "Three", "Four" });
+            //ConvertOperators.ToListMethod(new List<string>() { "One", "Two", "Three", "Four" });
+            //ConvertOperators.ToDictionaryMethod(studentList2);
+            ConvertOperators.CastMethod(studentList);
             Console.Read();
         }
 
