@@ -48,6 +48,7 @@
     <Compile Include="4_GenerateDataOperators.cs" />
     <Compile Include="3_PartitionOperators.cs" />
     <Compile Include="1_AggregateFunctions.cs" />
+    <Compile Include="6_LinqAndString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />

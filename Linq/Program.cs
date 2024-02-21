@@ -60,7 +60,27 @@ namespace Linq
             //ConvertOperators.ToArrayMethod(new List<string>() { "One", "Two", "Three", "Four" });
             //ConvertOperators.ToListMethod(new List<string>() { "One", "Two", "Three", "Four" });
             //ConvertOperators.ToDictionaryMethod(studentList2);
-            ConvertOperators.CastMethod(studentList);
+            //ConvertOperators.CastMethod(studentList);
+
+            // -------------- xu li chuoi --------------
+            string source = @"LINQ extends the language by the addition of query expressions, " +
+                            @" which are akin to SQL statements, and can be used to conveniently extract and " +
+                            @" process data from arrays, enumerable classes, XML documents, relational databases, " +
+                            @" and third-party data sources.";
+            LinqToHandleString.CountApperance(source, "to"); // dem xem tu "to" xuat hien bao nhieu lan trong chuoi source
+            LinqToHandleString.CountNumberOfWordInSource(source); // dem so tu trong doan van ban
+
+            string text = @"A person can love a god or a person. Love can also " +
+                        @"be a virtue representing human kindness. Here is what we know. " +
+                        @"Interpersonal love refers to love between human beings. " +
+                        @"Since the lust and attraction stages are both considered temporary.";
+
+            LinqToHandleString.FindSentencesContainsArrayWords(text, new string[] { "love", "human"}); // tim cac cau co chua love va human
+
+            string aString = "JPL3UE1F--NK78-L2QW-34T";
+            LinqToHandleString.GetNumberInString(aString);
+            LinqToHandleString.GetTheFirstPart(aString, separator: '-');
+
             Console.Read();
         }
 
