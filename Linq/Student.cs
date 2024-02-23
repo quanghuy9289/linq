@@ -9,6 +9,8 @@ namespace Linq
         public string StudentName { get; set; }
         public int Age { get; set; }
 
+        public int StandardId { get; set; }
+
         public Student() { }
         public Student(int id, string name, int age)
         {
@@ -36,5 +38,11 @@ namespace Linq
         {
             return obj.StudentId.GetHashCode();
         }
+    }
+
+    public class Standard
+    {
+        public int StandardId { get; set; }
+        public string StandardName { get; set; }
     }
 }

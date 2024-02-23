@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,24 +64,58 @@ namespace Linq
             //ConvertOperators.CastMethod(studentList);
 
             // -------------- xu li chuoi --------------
-            string source = @"LINQ extends the language by the addition of query expressions, " +
-                            @" which are akin to SQL statements, and can be used to conveniently extract and " +
-                            @" process data from arrays, enumerable classes, XML documents, relational databases, " +
-                            @" and third-party data sources.";
-            LinqToHandleString.CountApperance(source, "to"); // dem xem tu "to" xuat hien bao nhieu lan trong chuoi source
-            LinqToHandleString.CountNumberOfWordInSource(source); // dem so tu trong doan van ban
+            //string source = @"LINQ extends the language by the addition of query expressions, " +
+            //                @" which are akin to SQL statements, and can be used to conveniently extract and " +
+            //                @" process data from arrays, enumerable classes, XML documents, relational databases, " +
+            //                @" and third-party data sources.";
+            //LinqToHandleString.CountApperance(source, "to"); // dem xem tu "to" xuat hien bao nhieu lan trong chuoi source
+            //LinqToHandleString.CountNumberOfWordInSource(source); // dem so tu trong doan van ban
 
-            string text = @"A person can love a god or a person. Love can also " +
-                        @"be a virtue representing human kindness. Here is what we know. " +
-                        @"Interpersonal love refers to love between human beings. " +
-                        @"Since the lust and attraction stages are both considered temporary.";
+            //string text = @"A person can love a god or a person. Love can also " +
+            //            @"be a virtue representing human kindness. Here is what we know. " +
+            //            @"Interpersonal love refers to love between human beings. " +
+            //            @"Since the lust and attraction stages are both considered temporary.";
 
-            LinqToHandleString.FindSentencesContainsArrayWords(text, new string[] { "love", "human"}); // tim cac cau co chua love va human
+            //LinqToHandleString.FindSentencesContainsArrayWords(text, new string[] { "love", "human"}); // tim cac cau co chua love va human
 
-            string aString = "JPL3UE1F--NK78-L2QW-34T";
-            LinqToHandleString.GetNumberInString(aString);
-            LinqToHandleString.GetTheFirstPart(aString, separator: '-');
+            //string aString = "JPL3UE1F--NK78-L2QW-34T";
+            //LinqToHandleString.GetNumberInString(aString);
+            //LinqToHandleString.GetTheFirstPart(aString, separator: '-');
+            //LinqToHandleString.LinqWithRegularExpression();
 
+            //List<string> matrix = new List<string>() { "6, 5, 7, 0", "1, 9, 2, 3", "5, 9, 2, 1" };
+            //LinqToHandleString.SortDescMatrixDataInColumnByColumnIndex(matrix, columnIndex: 1);
+
+            //string csvInFile = @"students.csv";
+            //string csvOutFile = @"sortedStudents.csv";
+            //LinqToHandleString.SortCSVData(csvInFile, csvOutFile);
+
+
+
+            // -------------- Exercise --------------
+            // Student collection
+            IList<Student> students = new List<Student>()
+            {
+                new Student() { StudentId = 1, StudentName = "John", Age = 18, StandardId = 1},
+                new Student() { StudentId = 2, StudentName = "Steve", Age = 21, StandardId = 1 },
+                new Student() { StudentId = 3, StudentName = "Bill", Age = 18, StandardId = 1 },
+                new Student() { StudentId = 4, StudentName = "Ram" , Age = 20, StandardId = 2},
+                new Student() { StudentId = 5, StudentName = "Ron" , Age = 15, StandardId = 2 },
+                new Student() { StudentId = 3, StudentName = "Bill", Age = 20 },
+            };
+
+            IList<Standard> standardList = new List<Standard>()
+            {
+                new Standard(){ StandardId = 1, StandardName="Standard 1"},
+                new Standard(){ StandardId = 2, StandardName="Standard 2"},
+                new Standard(){ StandardId = 3, StandardName="Standard 3"}
+            };
+
+            //Exercise.SelectAndWhereMultipleTime(students);
+            //Exercise.BuildAnonymousStudent(students);
+            //Exercise.GroupStudentByStandardId(students);
+            //Exercise.LeftJoin(students, standardList);
+            Exercise.LeftJoinWithOrder(students, standardList);
             Console.Read();
         }
 

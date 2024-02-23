@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Linq
@@ -79,6 +81,51 @@ namespace Linq
             // Thực thi truy vấn, xuất kết quả các ký tự là số
             foreach (char c in stringQuery)
                 Console.Write(c + "");
+        }
+
+        public static void LinqWithRegularExpression()
+        {
+            // Danh sách các phần tử kiểu chuỗi
+            List<string> list = new List<string>() { "Learn C", "Code C++", "Web Design", "C# with LINQ" };
+
+            // Biểu thức chính quy tìm các chuỗi có chứa C, C++ hoặc C#
+            System.Text.RegularExpressions.Regex re = new Regex(@"(C#|C|C\+\+)");
+
+            var query = from li in list
+                        where re.IsMatch(li)
+                        select li;
+
+            Console.WriteLine("Cac phan tu co chua tu khoa C, C++ và C# là: ");
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public static void SortDescMatrixDataInColumnByColumnIndex(List<string> matrix, int columnIndex)
+        {
+            var scoreQuery = from line in matrix
+                             let fields = line.Split(',').Select(int.Parse).ToList()
+                             orderby fields[columnIndex] descending
+                             select line;
+
+            Console.WriteLine("The sorted matrix: ");
+            foreach(string str in scoreQuery)
+            {
+                Console.WriteLine(str);
+            }
+        }
+
+        public static void SortCSVData(string csvInFilePath, string csvOutFilePath)
+        {
+            string[] lines = File.ReadAllLines(csvInFilePath);
+            IEnumerable<string> data = from line in lines
+                                        let x = line.Split(',')
+                                        orderby x[2] // order by student id
+                                        select x[2] + "," + (x[1] + " " + x[0]);
+
+            File.WriteAllLines(csvOutFilePath, data);
+            Console.WriteLine(csvOutFilePath + " da duoc ghi vao dia.");
         }
     }
 }
