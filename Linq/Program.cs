@@ -115,7 +115,23 @@ namespace Linq
             //Exercise.BuildAnonymousStudent(students);
             //Exercise.GroupStudentByStandardId(students);
             //Exercise.LeftJoin(students, standardList);
-            Exercise.LeftJoinWithOrder(students, standardList);
+            //Exercise.LeftJoinWithOrder(students, standardList);
+
+            // -------------- LINQ to SQL --------------
+            Author author1 = new Author()
+            {
+                AuthorName = "Nguyen Anh Dung",
+                AuthorEmail = "sbook@gmail.com",
+                AuthorAddress = "Binh Phuoc, Thu Duc, tp Ho Chi Minh"
+            };
+            Author author2 = new Author()
+            {
+                AuthorName = "Nguyen Duy Tuan",
+                AuthorEmail = "gotino@gmail.com",
+                AuthorAddress = "Cau Giay, Ha Noi"
+            };
+            LinqToSqlSample.InsertData(author2);
+
             Console.Read();
         }
 
