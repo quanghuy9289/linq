@@ -130,8 +130,12 @@ namespace Linq
                 AuthorEmail = "gotino@gmail.com",
                 AuthorAddress = "Cau Giay, Ha Noi"
             };
-            LinqToSqlSample.InsertData(author2);
+            //LinqToSqlSample.InsertAuthor(author2);
 
+            //LinqToSqlSample.UpdateAuthor(2); // update author with Id=2
+            //LinqToSqlSample.PrintAuthors();
+            //LinqToSqlSample.DeleteAuthor(2);
+            LinqToSqlSample.GetAuthorsByStoreProcedure();
             Console.Read();
         }
 

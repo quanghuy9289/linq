@@ -23,3 +23,8 @@ create table Book(
  constraint fk_book_category foreign key (CategoryID) references Category(CategoryID),
  constraint fk_book_author	foreign key(AuthorID) references Author(AuthorID)
 )
+
+CREATE PROCEDURE sp_SelectAllAuthor
+AS
+	Select * from Author
+GO;

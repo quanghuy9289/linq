@@ -31,4 +31,12 @@
       <Association Name="Category_Book" Member="Books" ThisKey="CategoryID" OtherKey="CategoryID" Type="Book" />
     </Type>
   </Table>
+  <Function Name="dbo.sp_SelectAllAuthor" Method="sp_SelectAllAuthor">
+    <ElementType Name="sp_SelectAllAuthorResult">
+      <Column Name="AuthorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

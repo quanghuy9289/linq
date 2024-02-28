@@ -94,6 +94,13 @@ namespace Linq
 				return this.GetTable<Category>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SelectAllAuthor")]
+		public ISingleResult<sp_SelectAllAuthorResult> sp_SelectAllAuthor()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_SelectAllAuthorResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Author")]
@@ -705,6 +712,86 @@ namespace Linq
 		{
 			this.SendPropertyChanging();
 			entity.Category = null;
+		}
+	}
+	
+	public partial class sp_SelectAllAuthorResult
+	{
+		
+		private int _AuthorID;
+		
+		private string _AuthorName;
+		
+		private string _AuthorEmail;
+		
+		private string _AuthorAddress;
+		
+		public sp_SelectAllAuthorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorID", DbType="Int NOT NULL")]
+		public int AuthorID
+		{
+			get
+			{
+				return this._AuthorID;
+			}
+			set
+			{
+				if ((this._AuthorID != value))
+				{
+					this._AuthorID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AuthorName
+		{
+			get
+			{
+				return this._AuthorName;
+			}
+			set
+			{
+				if ((this._AuthorName != value))
+				{
+					this._AuthorName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorEmail", DbType="NVarChar(50)")]
+		public string AuthorEmail
+		{
+			get
+			{
+				return this._AuthorEmail;
+			}
+			set
+			{
+				if ((this._AuthorEmail != value))
+				{
+					this._AuthorEmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorAddress", DbType="NVarChar(150)")]
+		public string AuthorAddress
+		{
+			get
+			{
+				return this._AuthorAddress;
+			}
+			set
+			{
+				if ((this._AuthorAddress != value))
+				{
+					this._AuthorAddress = value;
+				}
+			}
 		}
 	}
 }
