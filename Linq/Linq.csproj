@@ -53,6 +53,10 @@
     <Compile Include="7_excercise.cs" />
     <Compile Include="6_LinqAndString.cs" />
     <Compile Include="8_LinqToSQL.cs" />
+    <Compile Include="9_SampleExtensionClass.cs" />
+    <Compile Include="DataBookStore.cs">
+      <DependentUpon>DataBookStore.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataBookStore.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

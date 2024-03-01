@@ -135,7 +135,15 @@ namespace Linq
             //LinqToSqlSample.UpdateAuthor(2); // update author with Id=2
             //LinqToSqlSample.PrintAuthors();
             //LinqToSqlSample.DeleteAuthor(2);
-            LinqToSqlSample.GetAuthorsByStoreProcedure();
+            //LinqToSqlSample.GetAuthorsByStoreProcedure();
+
+            // -------------- Extension method --------------
+            string s = "Hello";
+            Console.WriteLine("Reverse of {0} is: {1}", s, s.Reverse());
+
+            IQueryable<Student> query = students.AsQueryable<Student>();
+            Console.WriteLine("First student name: {0}", query.GetStudentName());
+            Console.WriteLine("First teenage student name: {0}", query.GetTeenageStudentName(SampleExtensionClass.IsTeenage));
             Console.Read();
         }
 
